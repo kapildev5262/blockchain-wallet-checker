@@ -1,0 +1,336 @@
+/* src/App.css */
+/* Base Styles */
+:root {
+  --primary-color: #3498db;
+  --primary-dark: #2980b9;
+  --secondary-color: #2ecc71;
+  --secondary-dark: #27ae60;
+  --danger-color: #e74c3c;
+  --danger-dark: #c0392b;
+  --warning-color: #f39c12;
+  --info-color: #3498db;
+  --success-color: #2ecc71;
+  --text-color: #333;
+  --text-light: #777;
+  --bg-color: #f5f8fa;
+  --card-bg: #ffffff;
+  --border-color: #e1e4e8;
+  --border-radius: 6px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* App Container */
+.app-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.app-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  max-width: 800px;
+  overflow: hidden;
+}
+
+.app-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.app-content {
+  padding: 1.5rem;
+}
+
+.app-footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid var(--border-color);
+  padding: 1rem;
+  text-align: center;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* Network Options */
+.network-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.network-selector {
+  flex: 1;
+  min-width: 250px;
+}
+
+.testnet-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-checkbox {
+  margin-right: 0.5rem;
+}
+
+/* Form Elements */
+.select-field {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  background-color: white;
+  cursor: pointer;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.input-field:focus, .select-field:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* Wallet Checker */
+.wallet-checker {
+  background-color: #f8f9fa;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.wallet-checker h2 {
+  margin-bottom: 1.5rem;
+  color: var(--primary-dark);
+  font-size: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button.primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.button.primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.button.secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.button.secondary:hover {
+  background-color: var(--secondary-dark);
+}
+
+.button.danger {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.button.danger:hover {
+  background-color: var(--danger-dark);
+}
+
+/* Message Displays */
+.error-message {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: var(--danger-dark);
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--danger-color);
+}
+
+.notification {
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  border-left: 4px solid;
+}
+
+.notification.warning {
+  background-color: rgba(243, 156, 18, 0.1);
+  color: #d35400;
+  border-left-color: var(--warning-color);
+}
+
+.notification.info {
+  background-color: rgba(52, 152, 219, 0.1);
+  color: var(--primary-dark);
+  border-left-color: var(--info-color);
+}
+
+.notification.success {
+  background-color: rgba(46, 204, 113, 0.1);
+  color: var(--secondary-dark);
+  border-left-color: var(--success-color);
+}
+
+/* Balance Display */
+.balance-display {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.balance-display h3 {
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.balance-amount {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.explorer-link {
+  display: inline-block;
+  color: var(--primary-color);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.explorer-link:hover {
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+/* Monitoring Status */
+.monitoring-status {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background-color: rgba(52, 152, 219, 0.1);
+  border-radius: var(--border-radius);
+}
+
+.pulse-indicator {
+  width: 12px;
+  height: 12px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  margin-right: 0.75rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7);
+  }
+  
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(52, 152, 219, 0);
+  }
+  
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 1rem;
+  }
+  
+  .network-options {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .network-selector, .testnet-toggle {
+    width: 100%;
+  }
+  
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .button {
+    width: 100%;
+  }
+}
